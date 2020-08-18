@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "qt/mainwindow.h"
 
 DNAVIZ::MainWindow::MainWindow(QWidget *parent){
   // do admin

@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+
+<qresource prefix="/opengl">
+	<file>shaders/fshader.glsl</file>
+    <file>shaders/vshader.glsl</file>
+    <file>img/cube.png</file>
+</qresource>
+
+</RCC>

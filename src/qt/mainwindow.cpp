@@ -1,15 +1,23 @@
 #include "mainwindow.h"
 
 DNAVIZ::MainWindow::MainWindow(QWidget *parent){
+  // do admin
   resize(640, 480);
   setWindowTitle(
     QApplication::translate("dnaviz", "DNA-Viz")
   );
-  QWidget *central_widget = new QWidget;
-  DNAVIZ::Viewer *viewer = new DNAVIZ::Viewer(this);
-  QVBoxLayout *layout = new QVBoxLayout;
-  layout->addWidget(viewer);
-  central_widget->setLayout(layout);
 
+  // initialise Widgets
+  DNAVIZ::Viewer *viewer = new DNAVIZ::Viewer(this);
+
+  // create central widget and allocate layout to it
+  QWidget *central_widget = new QWidget;
+  QVBoxLayout *layout = new QVBoxLayout;
+
+  // add widgets to the layout
+  layout->addWidget(viewer);
+
+  // set the layout and activate central widget
+  central_widget->setLayout(layout);
   setCentralWidget(central_widget);
 };

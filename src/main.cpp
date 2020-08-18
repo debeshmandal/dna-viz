@@ -1,12 +1,9 @@
-#include <QtWidgets>
+#include <QApplication>
+#include "qt/mainwindow.h"
 
 int main(int argc, char *argv[]) {
   QApplication app(argc, argv);
-  QWidget window;
-  window.resize(320, 240);
+  DNAVIZ::MainWindow window;
   window.show();
-  window.setWindowTitle(
-    QApplication::translate("toplevel", "Top-level widget")
-  );
   return app.exec();
 }

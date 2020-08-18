@@ -16,7 +16,13 @@ include_directories(include ${QT_DIR})
 include_directories(include ${OPENGL_INCLUDE_DIRS})
 include_directories(include ${GLUT_INCLUDE_DIR})
 
-set(QT_LIB libdnaviz-qt)
+#Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
+
+set(QT_LIB dnaviz-qt)
 add_library(${QT_LIB} ${QT_SOURCES})
 target_link_libraries(
     ${QT_LIB} 
@@ -25,13 +31,10 @@ target_link_libraries(
     ${GLUT_LIBRARIES}
 )
 
-set(DNAVIZ_LIB libdnaviz)
+set(DNAVIZ_LIB dnaviz-main)
 add_library(${DNAVIZ_LIB} ${DNAVIZ_SOURCES})
 target_link_libraries(
-    ${DNAVIZ_LIB} 
-    Qt5::Widgets 
-    ${OPENGL_LIBRARIES}
-    ${GLUT_LIBRARIES}
+    ${DNAVIZ_LIB}
     ${QT_LIB}
 )
 

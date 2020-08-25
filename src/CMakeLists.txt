@@ -12,6 +12,7 @@ set(OPENGL_SOURCES
 set(QT_SOURCES
     ${QT_DIR}/mainwindow.cpp
     ${QT_DIR}/viewer.cpp
+    ${QT_DIR}/utilities.cpp
     ${OPENGL_SOURCES}
 )
 

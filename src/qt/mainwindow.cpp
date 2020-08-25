@@ -9,13 +9,15 @@ DNAVIZ::MainWindow::MainWindow(QWidget *parent){
 
   // initialise Widgets
   DNAVIZ::Viewer *viewer = new DNAVIZ::Viewer(this);
+  DNAVIZ::Utilities *utilities = new DNAVIZ::Utilities(this);
 
   // create central widget and allocate layout to it
   QWidget *central_widget = new QWidget;
-  QVBoxLayout *layout = new QVBoxLayout;
+  QHBoxLayout *layout = new QHBoxLayout;
 
   // add widgets to the layout
   layout->addWidget(viewer);
+  layout->addWidget(utilities);
 
   // set the layout and activate central widget
   central_widget->setLayout(layout);

@@ -48,6 +48,8 @@ void DNAVIZ::Viewer::timerEvent(QTimerEvent *)
     // Stop rotation when speed goes below threshold
     if (angularSpeed < 0.01) {
         angularSpeed = 0.0;
+    } else if (angularSpeed > 50.0) {
+        angularSpeed = 0.0;
     } else {
         // Update rotation
         rotation = QQuaternion::fromAxisAndAngle(rotationAxis, angularSpeed) * rotation;
@@ -155,7 +157,7 @@ void DNAVIZ::Viewer::paintGL()
 //! [6]
 
     // Use texture unit 0 which contains cube.png
-    program.setUniformValue("texture", 0);
+    // program.setUniformValue("texture", 0);
 
     // Draw cube geometry
     geometries->drawCubeGeometry(&program);

@@ -26,6 +26,7 @@ private:
 struct VertexData
 {
     QVector3D position;
+    QVector3D color;
 };
 };
 #endif // GEOMETRYENGINE_H

@@ -9,7 +9,9 @@ varying vec3 v_normal;
 //! [0]
 void main()
 {   
-    vec3 light = vec3(0.5, 0.5, 0.5);
-    gl_FragColor = vec4(0.66, 0.55, 0.33, 1.0) * 0.5 * (1.0 + dot(v_normal, light));
+    vec3 light = vec3(0.5, 2.0, 0.005);
+    vec3 normal = light * v_normal;
+    float coeff = dot(normal, normal);
+    gl_FragColor = vec4(0.1, 0.55, 1.0, 1.0) * 0.8 * (coeff + 0.1);
 }
 //! [0]

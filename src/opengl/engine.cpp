@@ -34,22 +34,22 @@ void DNAVIZ::Engine::initSphereGeometry(QVector3D *position, float radius)
         {QVector3D( 1.0f,  1.0f,  1.0f), QVector3D(0.0f, 0.0f, 1.0f)}, // v3
 
         // Vertex data for face 1
-        {QVector3D( 1.0f, -1.0f,  1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v4
-        {QVector3D( 1.0f, -1.0f, -1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v5
-        {QVector3D( 1.0f,  1.0f,  1.0f), QVector3D(0.0f, 1.0f, 0.0f)},  // v6
-        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v7
+        {QVector3D( 1.0f, -1.0f,  1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v4
+        {QVector3D( 1.0f, -1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v5
+        {QVector3D( 1.0f,  1.0f,  1.0f), QVector3D(1.0f, 0.0f, 0.0f)},  // v6
+        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v7
 
         // Vertex data for face 2
-        {QVector3D( 1.0f, -1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v8
-        {QVector3D(-1.0f, -1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v9
-        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v10
-        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(1.0f, 0.0f, 0.0f)}, // v11
+        {QVector3D( 1.0f, -1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v8
+        {QVector3D(-1.0f, -1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v9
+        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v10
+        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v11
 
         // Vertex data for face 3
-        {QVector3D(-1.0f, -1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v12
-        {QVector3D(-1.0f, -1.0f,  1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v13
-        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v14
-        {QVector3D(-1.0f,  1.0f,  1.0f), QVector3D(0.0f, 0.0f, -1.0f)}, // v15
+        {QVector3D(-1.0f, -1.0f, -1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v12
+        {QVector3D(-1.0f, -1.0f,  1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v13
+        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v14
+        {QVector3D(-1.0f,  1.0f,  1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v15
 
         // Vertex data for face 4
         {QVector3D(-1.0f, -1.0f, -1.0f), QVector3D(0.0f, -1.0f, 0.0f)}, // v16
@@ -58,10 +58,10 @@ void DNAVIZ::Engine::initSphereGeometry(QVector3D *position, float radius)
         {QVector3D( 1.0f, -1.0f,  1.0f), QVector3D(0.0f, -1.0f, 0.0f)}, // v19
 
         // Vertex data for face 5
-        {QVector3D(-1.0f,  1.0f,  1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v20
-        {QVector3D( 1.0f,  1.0f,  1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v21
-        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}, // v22
-        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(-1.0f, 0.0f, 0.0f)}  // v23
+        {QVector3D(-1.0f,  1.0f,  1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v20
+        {QVector3D( 1.0f,  1.0f,  1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v21
+        {QVector3D(-1.0f,  1.0f, -1.0f), QVector3D(0.0f, 1.0f, 0.0f)}, // v22
+        {QVector3D( 1.0f,  1.0f, -1.0f), QVector3D(0.0f, 1.0f, 0.0f)}  // v23
     };
 
     // Indices for drawing cube faces using triangle strips.

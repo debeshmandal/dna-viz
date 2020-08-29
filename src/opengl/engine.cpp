@@ -1,7 +1,7 @@
 #include "opengl/engine.h"
 
 //! [0]
-DNAVIZ::Engine::Engine(QVector3D *position, float *radius)
+DNAVIZ::Engine::Engine(QVector3D *position, float radius)
     : indexBuf(QOpenGLBuffer::IndexBuffer)
 {
     initializeOpenGLFunctions();
@@ -21,7 +21,7 @@ DNAVIZ::Engine::~Engine()
 }
 //! [0]
 
-void DNAVIZ::Engine::initSphereGeometry(QVector3D *position, float *radius)
+void DNAVIZ::Engine::initSphereGeometry(QVector3D *position, float radius)
 {
     // For cube we would need only 8 vertices but we have to
     // duplicate vertex for each face because texture coordinate
@@ -92,7 +92,7 @@ void DNAVIZ::Engine::initSphereGeometry(QVector3D *position, float *radius)
 }
 
 //! [2]
-void DNAVIZ::Engine::drawSphereGeometry(QOpenGLShaderProgram *program, QVector3D *position, float *radius)
+void DNAVIZ::Engine::drawSphereGeometry(QOpenGLShaderProgram *program)
 {
     // Tell OpenGL which VBOs to use
     arrayBuf.bind();

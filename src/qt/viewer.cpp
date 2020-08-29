@@ -78,8 +78,9 @@ void DNAVIZ::Viewer::initializeGL()
     // Enable back face culling
     glEnable(GL_CULL_FACE);
 //! [2]
-
-    geometries = new DNAVIZ::GeometryEngine;
+    QVector3D *position = new QVector3D(0.0f, 0.0f, 0.0f);
+    float radius = 1.0; 
+    geometries = new DNAVIZ::Engine(position, radius);
 
     // Use QBasicTimer because its faster than QTimer
     timer.start(12, this);
@@ -162,5 +163,5 @@ void DNAVIZ::Viewer::paintGL()
     // program.setUniformValue("texture", 0);
 
     // Draw cube geometry
-    geometries->drawCubeGeometry(&program);
+    geometries->drawSphereGeometry(&program);
 }

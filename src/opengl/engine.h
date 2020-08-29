@@ -11,15 +11,15 @@ namespace DNAVIZ {
 class Engine : protected QOpenGLFunctions
 {
 public:
-    Engine(QVector3D *position, float *radius);
+    Engine(QVector3D *position, float radius);
     virtual ~Engine();
 
-    void drawSphereGeometry(QOpenGLShaderProgram *program, QVector3D *position, float *radius);
+    void drawSphereGeometry(QOpenGLShaderProgram *program);
     //void drawEllipsoidGeometry(QOpenGLShaderProgram *program);
     //void drawCylinderGeometry(QOpenGLShaderProgram *program);
 
 private:
-    void initSphereGeometry(QVector3D *position, float *radius);
+    void initSphereGeometry(QVector3D *position, float radius);
     //void initEllipsoidGeometry();
     //void initCylinderGeometry();
 

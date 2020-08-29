@@ -5,7 +5,7 @@ set(OPENGL_DIR ${SOURCE_DIR}/opengl)
 QT5_ADD_RESOURCES(OPENGL_RESOURCES ${OPENGL_DIR}/resources/opengl.qrc)
 
 set(OPENGL_SOURCES
-    ${OPENGL_DIR}/geometryengine.cpp
+    ${OPENGL_DIR}/engine.cpp
     ${OPENGL_RESOURCES}
 )
 

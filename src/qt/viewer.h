@@ -1,7 +1,7 @@
 #ifndef VIEWER_H
 #define VIEWER_H
 
-#include "opengl/geometryengine.h"
+#include "opengl/engine.h"
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
@@ -35,7 +35,7 @@ namespace DNAVIZ {
   private:
     QBasicTimer timer;
     QOpenGLShaderProgram program;
-    DNAVIZ::GeometryEngine *geometries = nullptr;
+    DNAVIZ::Engine *geometries = nullptr;
 
     QOpenGLTexture *texture = nullptr;
 

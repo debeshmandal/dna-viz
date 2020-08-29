@@ -7,7 +7,6 @@ DNAVIZ::Viewer::~Viewer()
     // Make sure the context is current when deleting the texture
     // and the buffers.
     makeCurrent();
-    delete texture;
     delete geometries;
     doneCurrent();
 }
@@ -69,7 +68,6 @@ void DNAVIZ::Viewer::initializeGL()
     glClearColor(0, 0, 0, 1);
 
     initShaders();
-    initTextures();
 
 //! [2]
     // Enable depth buffer
@@ -107,24 +105,6 @@ void DNAVIZ::Viewer::initShaders()
 }
 //! [3]
 
-//! [4]
-void DNAVIZ::Viewer::initTextures()
-{
-    // Load cube.png image
-    texture = new QOpenGLTexture(QImage(":/opengl/img/cube.png").mirrored());
-
-    // Set nearest filtering mode for texture minification
-    texture->setMinificationFilter(QOpenGLTexture::Nearest);
-
-    // Set bilinear filtering mode for texture magnification
-    texture->setMagnificationFilter(QOpenGLTexture::Linear);
-
-    // Wrap texture coordinates by repeating
-    // f.ex. texture coordinate (1.1, 1.2) is same as (0.1, 0.2)
-    texture->setWrapMode(QOpenGLTexture::Repeat);
-}
-//! [4]
-
 //! [5]
 void DNAVIZ::Viewer::resizeGL(int w, int h)
 {
@@ -147,8 +127,6 @@ void DNAVIZ::Viewer::paintGL()
     // Clear color and depth buffer
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    texture->bind();
-
 //! [6]
     // Calculate model view transformation
     QMatrix4x4 matrix;
@@ -158,9 +136,6 @@ void DNAVIZ::Viewer::paintGL()
     // Set modelview-projection matrix
     program.setUniformValue("mvp_matrix", projection * matrix);
 //! [6]
-
-    // Use texture unit 0 which contains cube.png
-    // program.setUniformValue("texture", 0);
 
     // Draw cube geometry
     geometries->drawSphereGeometry(&program);

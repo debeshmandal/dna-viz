@@ -3,7 +3,6 @@
 <qresource prefix="/opengl">
 	<file>shaders/fshader.glsl</file>
     <file>shaders/vshader.glsl</file>
-    <file>img/cube.png</file>
 </qresource>
 
 </RCC>

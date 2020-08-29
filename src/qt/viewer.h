@@ -30,14 +30,11 @@ namespace DNAVIZ {
     void paintGL() override;
 
     void initShaders();
-    void initTextures();
 
   private:
     QBasicTimer timer;
     QOpenGLShaderProgram program;
     DNAVIZ::Engine *geometries = nullptr;
-
-    QOpenGLTexture *texture = nullptr;
 
     QMatrix4x4 projection;
 

@@ -1,5 +1,5 @@
-#ifndef GEOMETRYENGINE_H
-#define GEOMETRYENGINE_H
+#ifndef ENGINE_H
+#define ENGINE_H
 
 #include <QOpenGLFunctions>
 #include <QOpenGLShaderProgram>
@@ -8,16 +8,20 @@
 #include <QVector3D>
 
 namespace DNAVIZ {
-class GeometryEngine : protected QOpenGLFunctions
+class Engine : protected QOpenGLFunctions
 {
 public:
-    GeometryEngine();
-    virtual ~GeometryEngine();
+    Engine(QVector3D *position, float *radius);
+    virtual ~Engine();
 
-    void drawCubeGeometry(QOpenGLShaderProgram *program);
+    void drawSphereGeometry(QOpenGLShaderProgram *program, QVector3D *position, float *radius);
+    //void drawEllipsoidGeometry(QOpenGLShaderProgram *program);
+    //void drawCylinderGeometry(QOpenGLShaderProgram *program);
 
 private:
-    void initCubeGeometry();
+    void initSphereGeometry(QVector3D *position, float *radius);
+    //void initEllipsoidGeometry();
+    //void initCylinderGeometry();
 
     QOpenGLBuffer arrayBuf;
     QOpenGLBuffer indexBuf;

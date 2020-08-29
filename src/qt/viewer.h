@@ -23,7 +23,6 @@ namespace DNAVIZ {
   protected:
     void mousePressEvent(QMouseEvent *e) override;
     void mouseReleaseEvent(QMouseEvent *e) override;
-    void mouseMoveEvent(QMouseEvent *e) override;
     void timerEvent(QTimerEvent *e) override;
 
     void initializeGL() override;
@@ -46,8 +45,6 @@ namespace DNAVIZ {
     QVector3D rotationAxis;
     qreal angularSpeed = 0;
     QQuaternion rotation;
-
-    bool isClicked = false;
   };
 };
 #endif

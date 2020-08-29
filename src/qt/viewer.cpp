@@ -17,19 +17,7 @@ void DNAVIZ::Viewer::mousePressEvent(QMouseEvent *e)
 {
     // Save mouse press position
     mousePressPosition = QVector2D(e->localPos());
-    isClicked = true;
     
-}
-
-void DNAVIZ::Viewer::mouseMoveEvent(QMouseEvent *e) {
-    if (isClicked) {
-        mousePressPosition = QVector2D(e->localPos());
-        QVector2D diff =  QVector2D(e->localPos()) - mousePressPosition;
-        QVector3D n = QVector3D(diff.y(), diff.x(), 0.0).normalized();
-        rotationAxis = (rotationAxis + n).normalized();
-        rotation = QQuaternion::fromAxisAndAngle(rotationAxis, 1) * rotation;
-        update();
-    };
 }
 
 void DNAVIZ::Viewer::mouseReleaseEvent(QMouseEvent *e)
@@ -49,8 +37,6 @@ void DNAVIZ::Viewer::mouseReleaseEvent(QMouseEvent *e)
 
     // Increase angular speed
     angularSpeed += acc;
-
-    isClicked = false;
     
 }
 //! [0]

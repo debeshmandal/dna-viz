@@ -17,7 +17,7 @@ DNAVIZ::MainWindow::MainWindow(QWidget *parent){
 
   // add widgets to the layout
   layout->addWidget(viewer);
-  layout->addWidget(utilities);
+  //layout->addWidget(utilities);
 
   // set the layout and activate central widget
   central_widget->setLayout(layout);

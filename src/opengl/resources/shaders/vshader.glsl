@@ -14,8 +14,10 @@ varying vec3 v_normal;
 //! [0]
 void main()
 {
+    vec4 cameraPos = mvp_matrix * a_position;
+
     // Calculate vertex position in screen space
-    gl_Position = mvp_matrix * a_position;
+    gl_Position = cameraPos;
     v_normal = a_normal;
 }
 //! [0]

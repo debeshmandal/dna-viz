@@ -44,7 +44,7 @@ void DNAVIZ::Viewer::mouseReleaseEvent(QMouseEvent *e)
 void DNAVIZ::Viewer::timerEvent(QTimerEvent *)
 {
     // Decrease angular speed (friction)
-    angularSpeed *= 0.99;
+    angularSpeed *= 1.00;
 
     // Stop rotation when speed goes below threshold
     if (angularSpeed < 0.01) {
@@ -138,5 +138,8 @@ void DNAVIZ::Viewer::paintGL()
 //! [6]
 
     // Draw cube geometry
+    // for (int i, i++, i < 4) {
+    //   geometries->drawSphereGeometry(&program, *particles[i], 1.0)    
+    // }
     geometries->drawSphereGeometry(&program);
 }
